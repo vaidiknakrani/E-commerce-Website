@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Somnath Machinery and Hardware</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Feather icons & Vanta -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+  <!-- Tailwind extend -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#149eca',
+            secondary: '#087ea4',
+            dark: '#23272f',
+            light: '#f6f7f9',
+            accent: '#41a1c8',
+            yellowAccent: '#F59E0B'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; } /* smooth scroll */
+    .typing {
+      border-right: 4px solid black;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { border-color: black; }
+      25%, 75% { border-color: transparent; }
+    }
+
+    /* product hover */
+    .product-card img {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .product-card:hover img {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    /* make nav blur fallback */
+    .nav-blur { background: rgba(35,39,47,0.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+
+    /* small tweak for Vanta container to ensure visibility on mobile */
+    #vanta-bg { min-height: 320px; }
+  </style>
+</head>
+<body class="bg-white text-dark antialiased">
+
+  <!-- NAVBAR (sticky + blur) -->
+  <nav class="fixed w-full top-0 z-50 nav-blur shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="#home" class="flex items-center gap-3">
+          <span class="text-primary font-extrabold text-xl sm:text-2xl md:text-3xl">Somnath Machinery and Hardware</span>
+        </a>
+
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:items-center md:space-x-8 text-gray-200">
+          <a href="#products" class="hover:text-primary transition">Products</a>
+          <a href="#About" class="hover:text-primary transition">About</a>
+          <a href="#contact" class="hover:text-primary transition">Contact</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="p-2 rounded-md focus:outline-none" aria-label="Open menu">
+            <i data-feather="menu" class="w-6 h-6 text-gray-200"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col items-center space-y-3 text-gray-200">
+          <a href="#products" class="block w-full py-2">Products</a>
+          <a href="#About" class="block w-full py-2">About</a>
+          <a href="#contact" class="block w-full py-2">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="relative mt-20">
+    <div id="vanta-bg" class="relative h-[420px] sm:h-[520px]">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute inset-0 flex items-center justify-center px-4 text-center">
+        <div class="max-w-4xl">
+          <h1 id="typed-text" class="typing text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4"></h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-white/90">High-quality industrial machinery and hardware for your business</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCTS -->
+  <!-- Products Section -->
+<div id="products" class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12">Our Products</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Product Cards with Floating Effect -->
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img1.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Karni </b>(Chunaida)</div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img2.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Motor </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img4.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Chisel </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img5.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Motor </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img7.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Garden Rake </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img8.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Nut Bolt </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img9.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Pully </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img10.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Water tank valve </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img12.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Wooden Handle </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img13.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Motor </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img14.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Motor </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img15.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b>  Screw </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img16.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Shovel </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img17.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Weighing Scale </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img18.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Sickle </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img19.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Line Dori </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img20.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Garden Pipe </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img21.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Galvanished Wire </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img22.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b>Wire Nails </b></div>
+      </div>
+        <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img23.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Packing Wire</b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img24.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Bearing Box </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img25.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Block Bearing </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img26.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Garden Pipe </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img27.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Metal Shovel </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img28.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Measuring Tape</b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img29.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"  style="text-align: center"><b> Welding Electrode Holder </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img30.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Welding Machine </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img31.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Cutting Wheels </b></div>
+      </div>
+
+       <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img32.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"><b> Chainsaw </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img33.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl" style="text-align: center"><b>Oxygen Regulator Gauge </b></div>
+      </div>
+
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <img src="img34.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
+        <div class="text-3xl"  style="text-align: center"><b> Three Phase Electric Motor </b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">Contact Us</h2>
+      <p class="text-lg sm:text-xl text-gray-700 mb-4">We’re here to help! Get in touch with us for orders, inquiries, or support.</p>
+
+      <div class="text-lg sm:text-2xl font-semibold text-gray-800 mb-2">📍 Somnath Machinery & Hardware</div>
+      <p class="text-md sm:text-lg text-gray-600 mb-4">Navavas Madhapar near police chowki, Prince Plaza, Shop No. 21</p>
+
+      <a href="tel:+919428684612" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold text-lg sm:text-2xl px-8 py-3 rounded-full shadow transition transform hover:scale-105 mb-4">
+        📞 +91 9428684612
+      </a>
+
+      <p class="mt-3"><a href="mailto:jayantcpatel3@gmail.com" class="text-blue-600 text-lg sm:text-2xl">📧 jayantcpatel3@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ABOUT + MISSION/VISION -->
+  <section id="About" class="bg-gray-50 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-6 border-b-4 inline-block border-yellowAccent pb-2">About Us</h2>
+
+      <p class="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
+        <span class="font-semibold text-gray-900">Somnath Machinery and Hardware</span>, established in
+        <span class="font-semibold">2023</span>, is built upon over a
+        <span class="font-semibold">decade of experience</span> in the hardware and machinery industry. The shop’s founder has been actively serving customers since
+        <span class="font-semibold">2012</span>, earning a strong reputation for
+        <span class="font-semibold">reliability, quality, and service excellence</span>.
+      </p>
+
+      <p class="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
+        With deep roots and trusted connections across
+        <span class="font-semibold">Madapar, Bhuj along with Major areas in Gujarat</span>, and several other regions of
+        <span class="font-semibold">india</span>, we have built a strong customer network that reflects our
+        <span class="font-semibold">dedication and credibility</span>.
+      </p>
+
+      <p class="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed mb-8">
+        As a prominent <span class="font-semibold">wholesaler and retailer</span>, we specialize in delivering
+        <span class="font-semibold">premium-quality hardware and machinery products</span> that cater to both
+        <span class="font-semibold">industrial and domestic needs</span>. Our commitment to
+        <span class="font-semibold">quality, integrity, and long-term relationships</span> continues to guide our growth and success.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow p-6 border-l-4 border-yellowAccent">
+          <h3 class="text-2xl font-bold mb-3">Our Mission</h3>
+          <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+            To provide <span class="font-semibold">high-quality and reliable hardware and machinery products</span> that meet the diverse needs of our customers, ensuring <span class="font-semibold">value, trust, and long-term satisfaction</span> through professional service and ethical business practices.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-6 border-l-4 border-yellowAccent">
+          <h3 class="text-2xl font-bold mb-3">Our Vision</h3>
+          <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+            To become a <span class="font-semibold">leading and trusted hardware and machinery supplier in Gujarat</span>, recognized for our <span class="font-semibold">premium products, customer-centric approach,</span> and <span class="font-semibold">consistent excellence</span> in service and delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-gray-300">
+      &copy; 2025 Somnath Machinery and Hardware. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // typed text
+    const texts = ["Premium Machinery & Hardware Shop", "Welcome to Somnath Machinery "];
+    let count = 0, index = 0, currentText = '', letter = '';
+
+    function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      const el = document.getElementById('typed-text');
+      if (el) el.textContent = letter;
+      if (letter.length === currentText.length) {
+        setTimeout(() => { index = 0; count++; type(); }, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // start typing
+      type();
+
+      // feather icons
+      feather.replace();
+
+      // mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      }
+
+      // initialize Vanta if available
+      if (window.VANTA && typeof VANTA.NET === 'function') {
+        VANTA.NET({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          color: 0x149eca,
+          backgroundColor: 0xffffff,
+          points: 12.00,
+          maxDistance: 20.00,
+          spacing: 15.00
+        });
+      }
+
+      // AOS
+      if (window.AOS) {
+        AOS.init({ once: false, mirror: true, duration: 900, easing: 'ease-in-out' });
+      }
+    });
+  </script>
+</body>
+</html>
