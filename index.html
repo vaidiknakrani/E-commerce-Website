@@ -36,38 +36,117 @@
 
   <style>
     html { scroll-behavior: smooth; } /* smooth scroll */
-    .typing {
-      border-right: 4px solid black;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-      0%, 50%, 100% { border-color: black; }
-      25%, 75% { border-color: transparent; }
-    }
 
-    /* product hover */
-    .product-card img {
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-    .product-card:hover img {
-      transform: translateY(-10px) scale(1.04);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-    }
+.typing {
+  border-right: 4px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink 0.8s infinite;
+}
 
-    /* make nav blur fallback */
-    .nav-blur { background: rgba(35,39,47,0.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+/* Blink animation for cursor */
+@keyframes blink {
+  0%, 50%, 100% { border-color: black; }
+  25%, 75% { border-color: transparent; }
+}
 
-    /* small tweak for Vanta container to ensure visibility on mobile */
-    #vanta-bg { min-height: 320px; }
+/* Product card image hover effect */
+.product-card img {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.product-card:hover img {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Navigation blur background */
+.nav-blur {
+  background: rgba(35,39,47,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Ensure Vanta container minimum height */
+#vanta-bg {
+  min-height: 320px;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  /* Reduce border thickness of typing cursor for small screens */
+  .typing {
+    border-right-width: 2px;
+  }
+
+  /* Ensure product-card images fit the screen nicely */
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* On mobile, hover effects are less practical, so reduce or disable */
+  .product-card:hover img {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Adjust navigation blur transparency for better readability on small screens */
+  .nav-blur {
+    background: rgba(35,39,47,0.8);
+  }
+
+  /* Adjust Vanta background minimum height for smaller devices */
+  #vanta-bg {
+    min-height: 200px;
+  }
+}
+
+/* Optional: Improve text size on smaller devices for readability */
+@media (max-width: 480px) {
+  .typing {
+    font-size: 1rem; /* smaller font on very small screens */
+  }
+}
   </style>
 </head>
+<script>
+  // Feather icons setup
+  feather.replace();
+
+  // Toggle mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Hide navbar on scroll down, show on scroll up
+  let lastScrollTop = 0;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down → hide navbar
+      navbar.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up → show navbar
+      navbar.style.transform = 'translateY(0)';
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
+  });
+</script>
+
 <body class="bg-white text-dark antialiased">
 
   <!-- NAVBAR (sticky + blur) -->
-  <nav class="fixed w-full top-0 z-50 nav-blur shadow">
+  <nav class="fixed w-full top-0 z-50 nav-blur shadow transition-transform duration-300" id="navbar">
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-20">
         <a href="#home" class="flex items-center gap-3">
@@ -348,60 +427,73 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script>
-    // typed text
-    const texts = ["Premium Machinery & Hardware Shop", "Welcome to Somnath Machinery "];
-    let count = 0, index = 0, currentText = '', letter = '';
+ <script>
+  const texts = ["Premium Machinery & Hardware Shop", "Welcome to Somnath Machinery"];
+  let count = 0, index = 0, currentText = '', letter = '';
 
-    function type() {
-      if (count === texts.length) count = 0;
-      currentText = texts[count];
-      letter = currentText.slice(0, ++index);
-      const el = document.getElementById('typed-text');
-      if (el) el.textContent = letter;
-      if (letter.length === currentText.length) {
-        setTimeout(() => { index = 0; count++; type(); }, 2000);
-      } else {
-        setTimeout(type, 100);
-      }
+  function type() {
+    if (count === texts.length) count = 0;
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+    const el = document.getElementById('typed-text');
+    if (el) el.textContent = letter;
+
+    if (letter.length === currentText.length) {
+      setTimeout(() => {
+        index = 0;
+        count++;
+        type();
+      }, 2000);
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Start typing animation
+    type();
+
+    // Replace feather icons if Feather library is included
+    if (window.feather) {
+      feather.replace();
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      // start typing
-      type();
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
-      // feather icons
-      feather.replace();
+    // Initialize Vanta NET background if available
+    if (window.VANTA && typeof VANTA.NET === 'function') {
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,  // enabled for mobile touch
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        color: 0x149eca,
+        backgroundColor: 0xffffff,
+        points: 12.00,
+        maxDistance: 20.00,
+        spacing: 15.00
+      });
+    }
 
-      // mobile menu toggle
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-      }
-
-      // initialize Vanta if available
-      if (window.VANTA && typeof VANTA.NET === 'function') {
-        VANTA.NET({
-          el: "#vanta-bg",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          color: 0x149eca,
-          backgroundColor: 0xffffff,
-          points: 12.00,
-          maxDistance: 20.00,
-          spacing: 15.00
-        });
-      }
-
-      // AOS
-      if (window.AOS) {
-        AOS.init({ once: false, mirror: true, duration: 900, easing: 'ease-in-out' });
-      }
-    });
-  </script>
+    // Initialize AOS animations if available
+    if (window.AOS) {
+      AOS.init({
+        once: false,
+        mirror: true,
+        duration: 900,
+        easing: 'ease-in-out'
+      });
+    }
+  });
+</script>
 </body>
 </html>
