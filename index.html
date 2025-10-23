@@ -109,6 +109,26 @@
     font-size: 1rem; /* smaller font on very small screens */
   }
 }
+#typed-text {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: white;
+  width: 100%;
+}
+
+#home {
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  height: 100vh;            /* full screen */
+  position: relative;
+  text-align: center;
+}
+
+
+
   </style>
 </head>
 <script>
@@ -140,6 +160,7 @@
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
   });
+
 </script>
 
 <body class="bg-white text-dark antialiased">
@@ -180,17 +201,27 @@
   </nav>
 
   <!-- HERO -->
-  <header id="home" class="relative mt-20">
-    <div id="vanta-bg" class="relative h-[420px] sm:h-[520px]">
-      <div class="absolute inset-0 bg-black/40"></div>
-      <div class="absolute inset-0 flex items-center justify-center px-4 text-center">
-        <div class="max-w-4xl">
-          <h1 id="typed-text" class="typing text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4"></h1>
-          <p class="text-lg sm:text-xl md:text-2xl text-white/90">High-quality industrial machinery and hardware for your business</p>
-        </div>
+  <header id="home" class="relative">
+  <div id="vanta-bg" class="bg-gray-500 text-white flex flex-col items-center justify-center min-h-screen w-full text-center">
+    <!-- Overlay for dark effect -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center px-4 w-full">
+      <div class="min-h-screen flex flex-col justify-center"> 
+        <!-- Fixed height keeps text vertically centered even while switching -->
+        <h1 id="typed-text" 
+            class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight text-center">
+        </h1>
+         <p class="text-lg sm:text-xl md:text-2xl text-white/90 mt-4">
+        High-quality industrial machinery and hardware for your business
+      </p>
       </div>
+     
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- PRODUCTS -->
   <!-- Products Section -->
@@ -199,156 +230,156 @@
     <h2 class="text-4xl font-bold text-center mb-12">Our Products</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Product Cards with Floating Effect -->
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img1.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Karni </b>(Chunaida)</div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img2.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Motor </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img4.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Chisel </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img5.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Motor </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img7.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Garden Rake </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img8.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Nut Bolt </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img9.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Pully </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img10.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Water tank valve </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img12.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Wooden Handle </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img13.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Motor </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img14.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Motor </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img15.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b>  Screw </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img16.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Shovel </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img17.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Weighing Scale </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img18.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Sickle </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img19.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Line Dori </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img20.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Garden Pipe </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img21.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Galvanished Wire </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img22.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b>Wire Nails </b></div>
       </div>
-        <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+        <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img23.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Packing Wire</b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img24.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Bearing Box </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img25.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Block Bearing </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img26.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Garden Pipe </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img27.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Metal Shovel </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img28.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Measuring Tape</b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img29.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"  style="text-align: center"><b> Welding Electrode Holder </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img30.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Welding Machine </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img31.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Cutting Wheels </b></div>
       </div>
 
-       <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+       <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img32.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"><b> Chainsaw </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
         <img src="img33.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl" style="text-align: center"><b>Oxygen Regulator Gauge </b></div>
       </div>
 
-      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center h-[400px]">
+      <div data-aos="fade-down" class="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center ">
         <img src="img34.jpg" alt="Product 1" class="w-full h-64 object-contain bg-gradient-to-b from-gray-100 to-gray-300 rounded-md mb-4">
         <div class="text-3xl"  style="text-align: center"><b> Three Phase Electric Motor </b></div>
       </div>
@@ -427,8 +458,13 @@
   </footer>
 
   <!-- SCRIPTS -->
- <script>
-  const texts = ["Premium Machinery & Hardware Shop", "Welcome to Somnath Machinery"];
+ 
+<script>
+  const texts = [
+    "Premium Machinery &<br>Hardware Shop",
+    "Welcome to Somnath Machinery<br>& Hardware"
+  ];
+
   let count = 0, index = 0, currentText = '', letter = '';
 
   function type() {
@@ -436,7 +472,7 @@
     currentText = texts[count];
     letter = currentText.slice(0, ++index);
     const el = document.getElementById('typed-text');
-    if (el) el.textContent = letter;
+    if (el) el.innerHTML = letter; // keep <br> working
 
     if (letter.length === currentText.length) {
       setTimeout(() => {
@@ -453,10 +489,8 @@
     // Start typing animation
     type();
 
-    // Replace feather icons if Feather library is included
-    if (window.feather) {
-      feather.replace();
-    }
+    // Feather icons
+    if (window.feather) feather.replace();
 
     // Mobile menu toggle
     const menuBtn = document.getElementById('menu-btn');
@@ -467,12 +501,12 @@
       });
     }
 
-    // Initialize Vanta NET background if available
+    // Vanta background
     if (window.VANTA && typeof VANTA.NET === 'function') {
       VANTA.NET({
         el: "#vanta-bg",
         mouseControls: true,
-        touchControls: true,  // enabled for mobile touch
+        touchControls: true,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
@@ -484,7 +518,7 @@
       });
     }
 
-    // Initialize AOS animations if available
+    // AOS
     if (window.AOS) {
       AOS.init({
         once: false,
@@ -495,5 +529,6 @@
     }
   });
 </script>
+
 </body>
 </html>
